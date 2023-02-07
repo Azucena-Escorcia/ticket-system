@@ -27,7 +27,7 @@ export default function Login() {
                         <p className='flex items-center'><input className='mr-2' type="checkbox"/> Remember Me</p>
                         <p>Forgot Password</p>
                     </div>
-                    <button onClick={() => navigate("/navbar")} className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg'>Log In</button>
+                    <button onClick={() => navigate("/ticket")} className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg'>Log In</button>
                 </form>
             </div>
         </div>
