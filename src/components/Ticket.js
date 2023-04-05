@@ -10,8 +10,8 @@ import { Link } from 'react-router-dom';
 
 const Ticket = () => {
     const menus = [
-        { name: "Tickets", link: "/", icon: IoTicketOutline},
-        { name: "Users", link: "/", icon: AiOutlineUser},
+        { name: "Tickets", link: "/ticket", icon: IoTicketOutline},
+        { name: "Users", link: "/user", icon: AiOutlineUser},
         { name: "Notification", link: "/", icon: MdNotificationsNone},
         { name: "Dashboard", link: "/", icon: AiOutlineDashboard},
         { name: "Settings", link: "/", icon: AiOutlineSetting, margin: true},
@@ -21,6 +21,7 @@ const Ticket = () => {
     ];
 
     const [open, setOpen] = useState(true);
+
 
     return (
         <section className="flex gap-6 bg-[#111111]">
@@ -42,76 +43,62 @@ const Ticket = () => {
                     ))}
                 </div>
             </div>
-            <div>
-                <div className="m-3 text-xl text-white font-semibold">
+            <div className='maincontainer w-full'>
+                <div className="m-6 text-xl text-white font-semibold">
                     Ticket System
                 </div>
-                <div class="max-w-3xl mx-auto px-8 sm:px-0">
-                <div class="sm:w-7/12 sm:mx-auto">
-                    <div 
-                    role="tablist"
-                    aria-label="tabs"
-                    class="relative w-max mx-auto h-12 grid grid-cols-3 items-center px-[3px] rounded-md bg-[#323232] overflow-hidden shadow-2xl shadow-900/20 transition"
-                    >
-                    <div class="absolute indicator h-11 my-auto top-0 bottom-0 left-0 rounded-md bg-white shadow-md"></div>
-                    <button
-                        role="tab"
-                        aria-selected="true"
-                        aria-controls="panel-1"
-                        id="tab-1"
-                        tabindex="0"
-                        class="relative block h-10 px-6 tab rounded-md"
-                    >
-                        <span class="text-white">My Tickets</span>
-                    </button>
-                    <button
-                        role="tab"
-                        aria-selected="false"
-                        aria-controls="panel-2"
-                        id="tab-2"
-                        tabindex="-1"
-                        class="relative block h-10 px-6 tab rounded-md"
-                    >
-                        <span class="text-white">New Tickets</span>
-                    </button>
-                    <button
-                        role="tab"
-                        aria-selected="false"
-                        aria-controls="panel-3"
-                        id="tab-3"
-                        tabindex="-1"
-                        class="relative block h-10 px-6 tab rounded-md"
-                    >
-                        <span class="text-white">Search Tickets</span>
-                    </button>
+                <div class="m-6">
+                    <div className='w-1/3 grid grid-cols-3 h-10'>
+                    <div className='bg-[#0e0e0e] hover:bg-gray-800 text-white rounded-l flex items-center justify-center border-zinc-800 border'>My Tickets</div>
+                    <div className='bg-[#0e0e0e] hover:bg-gray-800 text-white flex items-center justify-center border-zinc-800 border'>New Tickets</div>
+                    <div className='bg-[#0e0e0e] hover:bg-gray-800 text-white rounded-r flex items-center justify-center border-zinc-800 border'>Search Tickets</div>
                     </div>
-                    <div class="mt-6 relative rounded-3xl bg-purple-50">
-                    <div
-                        role="tabpanel"
-                        id="panel-1"
-                        class="tab-panel p-6 transition duration-300"
-                    >
-                        <h2 class="text-xl font-semibold text-gray-800">First tab panel</h2>
-                        <p class="mt-4 text-gray-600">Pentiente</p>
+                    
+                    <div class="bg-[#0e0e0e] rounded-lg h-96 border-zinc-800 border mt-4">
+                        <div className='m-6'>
+                        <div className='text-white pt-2'>My Tickets</div>
+                        <div className='mt-2 text-white'>Here you can view the tickets you are responsible for.</div>
+                        <div className='mt-2 grid grid-cols-3 w-1/3 h-10 '>
+                            <div className='hover:bg-gray-800 text-white rounded-l flex items-center justify-center border-zinc-800 border'>Issues</div>
+                            <div className='hover:bg-gray-800 text-white flex items-center justify-center border-zinc-800 border'>Requests</div>
+                            <div className='hover:bg-gray-800 text-white rounded-r flex items-center justify-center border-zinc-800 border'>Add Filter</div>
+                        </div>
+                        </div>
+                        <div className='flex flex-col m-6 border-zinc-800 border rounded text-white'>
+                            <table className="table-fixed divide-y divide-zinc-800">
+                                <thead>
+                                    <tr>
+                                    <th>Number</th>
+                                    <th>Title</th>
+                                    <th>Type</th>
+                                    <th>Author</th>
+                                    <th>State</th>
+                                    <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr className='text-center hover:bg-gray-800'>
+                                        <td className='p-2'>#316432</td>
+                                        <td className='p-2'>Install Maya, Redshift y RV</td>
+                                        <td className='p-2'>Issues: Software</td>
+                                        <td className='p-2'>Azucena Escorcia</td>
+                                        <td className='p-2'>In Progress</td>
+                                        <td className='p-2'>Today at 10:40</td>
+                                    </tr>
+                                    <tr className='text-center hover:bg-gray-800'>
+                                        <td className='p-2'>#355915</td>
+                                        <td className='p-2'>Drive SmallProjects, BCY</td>
+                                        <td className='p-2'>Requests: Network Drive</td>
+                                        <td className='p-2'>Azucena Escorcia</td>
+                                        <td className='p-2'>Complete</td>
+                                        <td className='p-2'>Today at 12:40</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
-                    <div
-                        role="tabpanel"
-                        id="panel-2"
-                        class="absolute top-0 invisible opacity-0 tab-panel p-6 transition duration-300"
-                    >
-                        <h2 class="text-xl font-semibold text-gray-800">Second tab panel</h2>
-                        <p class="mt-4 text-gray-600">Pentiente</p>
-                    </div>
-                    <div
-                        role="tabpanel"
-                        id="panel-3"
-                        class="absolute top-0 invisible opacity-0 tab-panel p-6 transition duration-300"
-                    >
-                        <h2 class="text-xl font-semibold text-gray-800">Third tab panel</h2>
-                        <p class="mt-4 text-gray-600">Pentiente</p>
-                    </div>
-                    </div>
-                </div>
+
                 </div>
             </div>
         </section>
